@@ -1,0 +1,184 @@
+[gd_scene format=3 uid="uid://cmyxmqdjcmwb3"]
+
+[ext_resource type="PackedScene" uid="uid://0ud4j3dlv8gf" path="res://scenes/zombie.tscn" id="1_sugp2"]
+[ext_resource type="PackedScene" uid="uid://dla37eioedxiw" path="res://scenes/main_character.tscn" id="2_jyhfs"]
+[ext_resource type="Script" uid="uid://bxpfvdfch8nch" path="res://game_manager.gd" id="3_tbgi4"]
+[ext_resource type="AudioStream" uid="uid://b345xnujn8s0x" path="res://Musica/resident-evil-game.mp3" id="4_78awf"]
+[ext_resource type="AudioStream" uid="uid://6hie0mwuwyk7" path="res://Musica/8bitdie.mp3" id="5_kiw3p"]
+[ext_resource type="AudioStream" uid="uid://set31ey4x311" path="res://Musica/bite.mp3" id="6_kiw3p"]
+[ext_resource type="AudioStream" uid="uid://dng1fvi1rc5qs" path="res://Musica/hurt.mp3" id="7_kiw3p"]
+
+[sub_resource type="GDScript" id="GDScript_1bvp3"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_h2yge"]
+load_path = "res://.godot/imported/pixel_art_large.png-cf61d69be43c548278f2eb095e17dd2a.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14911395, 0.14911407, 0.14911404, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.46666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.1706636, 0.17066364, 0.1706636, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.6048809, 0.3927147, 0.09306688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.2968526, 0.81739444, 0.25735402, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0.7486559, 0.2174578, 0.22131208, 1)
+
+[node name="Node" type="Node" unique_id=653575573]
+script = SubResource("GDScript_1bvp3")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1912619892]
+texture_filter = 1
+custom_minimum_size = Vector2(4, 0)
+offset_right = 1147.0
+offset_bottom = 649.0
+size_flags_horizontal = 4
+texture = SubResource("CompressedTexture2D_h2yge")
+expand_mode = 1
+
+[node name="Zombie" parent="." unique_id=1060418532 instance=ExtResource("1_sugp2")]
+unique_name_in_owner = true
+position = Vector2(33, 81)
+
+[node name="CharacterBody2D" parent="." unique_id=940892638 instance=ExtResource("2_jyhfs")]
+unique_name_in_owner = true
+position = Vector2(-34, 12)
+
+[node name="Game_manager" type="Node" parent="." unique_id=1088548595]
+unique_name_in_owner = true
+script = ExtResource("3_tbgi4")
+
+[node name="UI" type="CanvasLayer" parent="." unique_id=2043823140]
+
+[node name="Panel" type="Panel" parent="UI" unique_id=363078045]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -357.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/Panel" unique_id=1467311316]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="LabelPatron" type="Label" parent="UI/Panel/VBoxContainer" unique_id=530896772]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Patrones de Diseño"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelPregunta" type="Label" parent="UI/Panel/VBoxContainer" unique_id=2081078646]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Pregunta"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelPregunta2" type="Label" parent="UI/Panel/VBoxContainer" unique_id=1442394467]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Elige una opcion antes de que se acabe el tiempo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Temporizador" type="ProgressBar" parent="UI/Panel/VBoxContainer" unique_id=406387322]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5vw27")
+step = 1.0
+show_percentage = false
+
+[node name="BtnOpcion1" type="Button" parent="UI/Panel/VBoxContainer" unique_id=360130695]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "a)"
+autowrap_mode = 3
+
+[node name="BtnOpcion2" type="Button" parent="UI/Panel/VBoxContainer" unique_id=1840220452]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "b)"
+autowrap_mode = 3
+
+[node name="BtnOpcion3" type="Button" parent="UI/Panel/VBoxContainer" unique_id=838142423]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "c)"
+autowrap_mode = 3
+
+[node name="vida_jugador" type="ProgressBar" parent="UI" unique_id=1693501082]
+unique_name_in_owner = true
+offset_left = 26.0
+offset_top = 604.0
+offset_right = 334.0
+offset_bottom = 631.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
+show_percentage = false
+
+[node name="vida_zombie" type="ProgressBar" parent="UI" unique_id=513589949]
+unique_name_in_owner = true
+offset_left = 604.0
+offset_top = 139.0
+offset_right = 892.0
+offset_bottom = 159.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
+step = 1.0
+show_percentage = false
+
+[node name="BG" type="AudioStreamPlayer2D" parent="." unique_id=878890375]
+stream = ExtResource("4_78awf")
+autoplay = true
+
+[node name="Die" type="AudioStreamPlayer2D" parent="." unique_id=1198524957]
+stream = ExtResource("5_kiw3p")
+
+[node name="bite" type="AudioStreamPlayer2D" parent="." unique_id=624620515]
+stream = ExtResource("6_kiw3p")
+
+[node name="hurt" type="AudioStreamPlayer2D" parent="." unique_id=215804696]
+stream = ExtResource("7_kiw3p")
+
+[connection signal="zombie_daño" from="Zombie" to="Game_manager" method="_on_zombie_daño"]
+[connection signal="zombie_muerto" from="Zombie" to="Zombie" method="_on_zombie_muerto"]

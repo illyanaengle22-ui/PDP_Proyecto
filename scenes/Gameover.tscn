@@ -1,0 +1,135 @@
+[gd_scene format=3 uid="uid://d20tfsv2abtbn"]
+
+[ext_resource type="Script" uid="uid://chugg7slx3iq8" path="res://scenes/gameover.gd" id="1_cpwbi"]
+[ext_resource type="FontFile" uid="uid://ctuncoim0p8li" path="res://Recursos/Minecraft.ttf" id="2_0mhjh"]
+[ext_resource type="AudioStream" uid="uid://bb0d66d1pmpwj" path="res://Musica/GameOver.mp3" id="3_0mhjh"]
+
+[sub_resource type="FontVariation" id="FontVariation_uptpo"]
+base_font = ExtResource("2_0mhjh")
+
+[sub_resource type="FontVariation" id="FontVariation_h7o8u"]
+base_font = ExtResource("2_0mhjh")
+
+[node name="Gameover" type="Node" unique_id=1504524936]
+script = ExtResource("1_cpwbi")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=578981855]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Label4" type="Label" parent="." unique_id=40064051]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -180.0
+offset_right = 309.0
+offset_bottom = 153.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = SubResource("FontVariation_uptpo")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label3" type="Label" parent="." unique_id=808611104]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -309.0
+offset_top = -165.0
+offset_right = 297.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.8146313, 0.14792818, 6.3532593e-06, 1)
+theme_override_colors/font_outline_color = Color(1, 0.29501706, 0.23222247, 1)
+theme_override_fonts/font = SubResource("FontVariation_uptpo")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="." unique_id=2036695669]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -165.0
+offset_right = 299.0
+offset_bottom = 141.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.5981157, 0.08525195, 3.9948522e-06, 1)
+theme_override_fonts/font = SubResource("FontVariation_uptpo")
+theme_override_font_sizes/font_size = 100
+text = "GAME OVER
+
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="lblScore" type="Label" parent="." unique_id=515093106]
+unique_name_in_owner = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.0
+offset_top = -12.5
+offset_right = 145.0
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = SubResource("FontVariation_uptpo")
+theme_override_font_sizes/font_size = 25
+text = "SCORE: 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="btnREStart" type="Button" parent="." unique_id=1647309311]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -152.0
+offset_top = -188.0
+offset_right = 152.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_colors/font_color = Color(0.9607843, 0.7058824, 0.043137256, 1)
+theme_override_fonts/font = SubResource("FontVariation_h7o8u")
+theme_override_font_sizes/font_size = 30
+text = "[ RESTART ]"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=1344236004]
+stream = ExtResource("3_0mhjh")
+autoplay = true
+
+[connection signal="pressed" from="btnREStart" to="." method="_on_btn_re_start_pressed"]

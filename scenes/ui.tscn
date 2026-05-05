@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://75mshkwanbq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yge"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.14911395, 0.14911407, 0.14911404, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1bvp3"]
+bg_color = Color(0.12156863, 0.12156863, 0.12156863, 0.46666667)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_272bh"]
+bg_color = Color(0.1706636, 0.17066364, 0.1706636, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vw27"]
+bg_color = Color(0.6048809, 0.3927147, 0.09306688, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lquwl"]
+bg_color = Color(0.2968526, 0.81739444, 0.25735402, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7mycd"]
+bg_color = Color(0.7486559, 0.2174578, 0.22131208, 1)
+
+[node name="UI" type="CanvasLayer" unique_id=532967517]
+
+[node name="Panel" type="Panel" parent="." unique_id=1140731938]
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -357.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_h2yge")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=868053062]
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 9
+
+[node name="LabelPatron" type="Label" parent="Panel/VBoxContainer" unique_id=801973868]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_font_sizes/font_size = 27
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Patrones de Diseño"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelPregunta" type="Label" parent="Panel/VBoxContainer" unique_id=675020037]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(35.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Pregunta"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="LabelPregunta2" type="Label" parent="Panel/VBoxContainer" unique_id=85944018]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(33.1, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 0)
+theme_override_styles/normal = SubResource("StyleBoxFlat_1bvp3")
+text = "Elige una opcion antes de que se acabe el tiempo!"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Temporizador" type="ProgressBar" parent="Panel/VBoxContainer" unique_id=2018017299]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_272bh")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5vw27")
+step = 1.0
+show_percentage = false
+
+[node name="BtnOpcion1" type="Button" parent="Panel/VBoxContainer" unique_id=1986303481]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "a)"
+autowrap_mode = 3
+
+[node name="BtnOpcion2" type="Button" parent="Panel/VBoxContainer" unique_id=521625710]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "b)"
+autowrap_mode = 3
+
+[node name="BtnOpcion3" type="Button" parent="Panel/VBoxContainer" unique_id=255868711]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+text = "c)"
+autowrap_mode = 3
+
+[node name="vida_jugador" type="ProgressBar" parent="." unique_id=1003695680]
+unique_name_in_owner = true
+offset_left = 26.0
+offset_top = 604.0
+offset_right = 334.0
+offset_bottom = 631.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_lquwl")
+show_percentage = false
+
+[node name="vida_zombie" type="ProgressBar" parent="." unique_id=1119897566]
+unique_name_in_owner = true
+offset_left = 604.0
+offset_top = 139.0
+offset_right = 892.0
+offset_bottom = 159.0
+theme_override_styles/fill = SubResource("StyleBoxFlat_7mycd")
+step = 1.0
+show_percentage = false
